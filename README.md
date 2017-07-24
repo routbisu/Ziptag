@@ -10,9 +10,9 @@ The search is based on a clustered index on these parameters: products/services 
 
 Architecture and Product Planning:
 The product will have a responsive website which will let the user search for listings.
-Their will be an Android & iOS app which will do the same functionality.
+There will be an Android & iOS app which will do the same functionality.
 
-Their will be a REST API built on nodejs entirely that will cater to the website and app.
+There will be a REST API built on nodejs entirely that will cater to the website and app.
 
 ## Optional
 A data analytics engine written in Python that will provide analytics data about user searches and generate heatmaps.
