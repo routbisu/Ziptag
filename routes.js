@@ -5,9 +5,20 @@ const express = require('express');
 const router = express.Router();
 const mailer = require('./services/emailService');
 
-// Test route
+const productService = require('./services/productsService');
+
+// API Reference docs
 router.get('/', function(req, res) {
     res.json({ message: 'Welcome to Ziptag REST API'});
+});
+
+// Get all products
+router.get('/products', function(req, res) {
+    productService.getAll().then(function(products) {
+        res.json(products);
+    }, function(error) {
+        res.status(400).json(error);
+    });
 });
 
 router.get('/testemail', function(req, res) {
