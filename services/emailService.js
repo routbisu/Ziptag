@@ -6,7 +6,6 @@ const appConfig = require('../config/init/appConfig');
 const util = require('util');
 const nodemailer = require('nodemailer');
 
-// Create transporter for Zoho mail server
 let zohoTransporter = nodemailer.createTransport({
     host: appConfig.EmailConfig.EmailHostName,
     port: appConfig.EmailConfig.EmailPort,
@@ -18,7 +17,7 @@ let zohoTransporter = nodemailer.createTransport({
 });
 
 let mailer = {
-    // Sends an email and returs a promise
+    
     sendEmail: function(emailTo, emailSubject, emailText, emailIsHTML = false) {
         let emailFromText = util.format('"%s" <%s>', appConfig.EmailConfig.DefaultFromEmailFrom, 
             appConfig.EmailConfig.DefaultFromEmail);
@@ -38,7 +37,7 @@ let mailer = {
 
         // Return a promise object
         return new Promise(function (resolve, reject) {
-            zohoTransporter.sendMail(mailOptions, (error, info) => {
+            zohoTransporter.sendMail(mailOptions, function (error, info) {
                 if(error) {
                     reject(error);
                 }

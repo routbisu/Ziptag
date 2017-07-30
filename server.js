@@ -1,9 +1,11 @@
+// =================================================================================
 // Base Setup
 // =================================================================================
 const express       = require('express');
 const app           = express();
 const bodyParser    = require('body-parser');
 const morgan        = require('morgan');
+const passport      = require('passport');
 const jwt           = require('jsonwebtoken');
 
 // Get port number
@@ -13,6 +15,9 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+
+// Initialize passport for use
+app.use(passport.initialize());
 
 // Get other dependencies
 const router = require('./routes');
@@ -30,15 +35,15 @@ app.use(function(req, res, next) {
 });
 
 // Token based authentication middleware
-app.use(function(req, res, next) {
-    // Get access token from header or query string
-    let token = req.header['x-access-token'] || req.query.token;
+// app.use(function(req, res, next) {
+//     // Get access token from header or query string
+//     let token = req.header['x-access-token'] || req.query.token;
 
-    // Decode token
-    if (token) {
-        jwt.verify(token, app.get())
-    }
-});
+//     // Decode token
+//     if (token) {
+//         jwt.verify(token, app.get())
+//     }
+// });
 
 // Start the server
 // =================================================================================

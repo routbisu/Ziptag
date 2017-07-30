@@ -1,3 +1,4 @@
+// =========================================================================
 // Application Configuration
 // =========================================================================
 
@@ -19,7 +20,8 @@ const emailConfig = {
 // All other configuration
 const appConfig = {
     DBConnectionString: devDBConnectionString,
-    EmailConfig: emailConfig
+    EmailConfig: emailConfig,
+    PassportSecret: 'SerenityPrayer'
 };
 
 module.exports = appConfig;
