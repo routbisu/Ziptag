@@ -18,6 +18,8 @@ router.get('/', function(req, res) {
 // Get all products
 router.get('/products', passport.authenticate('jwt', { session: false }), function(req, res) {
     productService.getAll().then(function(products) {
+        console.log("Req data");
+        console.log(req.user);
         res.json(products);
     }, function(error) {
         res.status(400).json(error);

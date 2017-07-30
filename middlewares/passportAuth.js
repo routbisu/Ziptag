@@ -11,18 +11,25 @@ const userModel = require('../models/user');
  * Represents the passport authentication middleware
  * @param {passport} passport - This is the passport instance
  */
-const passportAuth = function(passport) {
+module.exports = function(passport) {
     var options = {
-        wtFromRequest: ExtractJwt.fromAuthHeader(),
+        jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),
         secretOrKey: appConfig.PassportSecret
     };
-
+    //console.log(options);
     passport.use(new JwtStrategy(options, function(jwtPayload, done) {
-        userModel.findOne({id: jwtPayload.id}, function(err, user) {
+        console.log('jwt pay load');
+        console.log(JSON.stringify(jwtPayload));
+        
+        //console.log('JWT ID: ' + jwtPayload.id);
+        
+        userModel.findOne({_id: jwtPayload.user_id}, function(err, user) {
             if (err) {
+                throw err;
                 return done(err, user);
             }
             if (user) {
+                console.log(user);
                 done(null, user);
             }
             else {
@@ -31,5 +38,3 @@ const passportAuth = function(passport) {
         });
     }));
 };
-
-module.exports = passportAuth;

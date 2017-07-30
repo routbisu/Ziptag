@@ -34,17 +34,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-// Token based authentication middleware
-// app.use(function(req, res, next) {
-//     // Get access token from header or query string
-//     let token = req.header['x-access-token'] || req.query.token;
-
-//     // Decode token
-//     if (token) {
-//         jwt.verify(token, app.get())
-//     }
-// });
-
 // Start the server
 // =================================================================================
 app.listen(port);

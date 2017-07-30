@@ -19,14 +19,20 @@ let authenticationService = {
         UserModel.findOne({
             email_id: loginUser.email_id
         }, function(err, user) {
-            if(err)
-                return callback({ message: 'User not found.' }, null);
+            if(err) {
+                return callback(err, null);  
+            }
             else {
+                if(!user) {
+                    return callback({ message: 'User not found.' }, null);  
+                }
+
                 // Check if the password matches
                 user.comparePassword(loginUser.password, function(err, isMatch) {
                     if(isMatch && !err) {
                         // Create the access token
-                        let token = jwt.sign(user, appConfig.PassportSecret, {
+                        console.log(user);
+                        let token = jwt.sign({ user_id: user._id}, appConfig.PassportSecret, {
                             expiresIn: 10080    // In minutes
                         });
 
