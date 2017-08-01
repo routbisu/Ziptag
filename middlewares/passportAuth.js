@@ -16,12 +16,10 @@ module.exports = function(passport) {
         jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),
         secretOrKey: appConfig.PassportSecret
     };
-    //console.log(options);
+    
     passport.use(new JwtStrategy(options, function(jwtPayload, done) {
         console.log('jwt pay load');
         console.log(JSON.stringify(jwtPayload));
-        
-        //console.log('JWT ID: ' + jwtPayload.id);
         
         userModel.findOne({_id: jwtPayload.user_id}, function(err, user) {
             if (err) {

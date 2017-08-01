@@ -11,7 +11,7 @@ const productModel = require('../models/product');
 let productsService = {
     
     // Get list of all products
-    getAll: function() {
+    GetAll: function() {
         return new Promise(function(resolve, reject) {
             productModel.find(function(err, products) {
                 if(err) 
@@ -20,7 +20,9 @@ let productsService = {
                     resolve(products);
             });
         });
-    }
+    },
+
+
 }
 
 module.exports = productsService;

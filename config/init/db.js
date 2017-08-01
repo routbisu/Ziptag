@@ -1,5 +1,6 @@
-// Database configuration
-// =================================================================================
+/**
+ * Database configuration & connection
+ */
 
 const appConfig = require('./appConfig');
 const util = require('util');

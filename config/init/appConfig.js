@@ -1,6 +1,6 @@
-// =========================================================================
-// Application Configuration
-// =========================================================================
+/**
+ * Contains all configuration data
+ */
 
 // Dev Database Connection String
 const devDBConnectionString = 'mongodb://admin:admin@ds143532.mlab.com:43532/ziptag';
@@ -17,10 +17,25 @@ const emailConfig = {
     DefaultEmailPassword: 'Ziptag@2017'
 }
 
+// List of cities
+const cities = [
+    { CityCode: 'BLR', CityName: 'Bengaluru' },
+    { CityCode: 'MYS', CityName: 'Mysuru' },
+    { CityCode: 'BOM', CityName: 'Mumbai' },
+]
+
+// Google authentication - Config
+const googleAuth = {
+    clientID: '',
+    clientSecret: '',
+    callbackURL: ''
+}
+
 // All other configuration
 const appConfig = {
     DBConnectionString: devDBConnectionString,
     EmailConfig: emailConfig,
+    AllCities: cities,
     PassportSecret: 'SerenityPrayer'
 };
 

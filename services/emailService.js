@@ -18,7 +18,7 @@ let zohoTransporter = nodemailer.createTransport({
 
 let mailer = {
     
-    sendEmail: function(emailTo, emailSubject, emailText, emailIsHTML = false) {
+    SendEmail: function(emailTo, emailSubject, emailText, emailIsHTML = false) {
         let emailFromText = util.format('"%s" <%s>', appConfig.EmailConfig.DefaultFromEmailFrom, 
             appConfig.EmailConfig.DefaultFromEmail);
             
