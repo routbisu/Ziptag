@@ -1,16 +1,15 @@
 // =========================================================================================
-// Mongoose model for Product
+// Mongoose model for Category
 // =========================================================================================
 
 // Get instance of mongoose connection
 const mongoose = require('../config/init/db');
 const Schema = mongoose.Schema;
 
-const ProductSchema = new Schema({
-    product_name: String,
-    product_description: String,
-    type: String,
-    category_id: String
+const CategorySchema = new Schema({
+    category_name: String,
+    category_description: String,
+    icon_path: String
 });
 
-module.exports = mongoose.model('Product', ProductSchema);
+module.exports = mongoose.model('Category', CategorySchema);

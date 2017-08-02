@@ -1,6 +1,5 @@
 const router = require('../routes/routes');
 const passport = require('passport');
-const passportAuth = require('../middlewares/passportAuth.js')(passport);
 const authService = require('../services/authService');
 const GetErrorMessage = require('../config/init/errorMessages');
 

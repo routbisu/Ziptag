@@ -3,6 +3,7 @@
  */
 
  const errorMessages = [
+     { ErrorCode: 800, ErrorMessage: 'There was an unexpected error.' },     
      { ErrorCode: 101, ErrorMessage: 'Please enter first name.' },
      { ErrorCode: 102, ErrorMessage: 'Please enter last name.' },
      { ErrorCode: 103, ErrorMessage: 'Please enter Email ID.' },
@@ -12,7 +13,9 @@
      { ErrorCode: 107, ErrorMessage: 'An user with the same email already exists.' },
      
      { ErrorCode: 601, ErrorMessage: 'User not found.' },
-     { ErrorCode: 602, ErrorMessage: 'Incorrect password.' }
+     { ErrorCode: 602, ErrorMessage: 'Incorrect password.' },
+
+     { ErrorCode: 160, ErrorMessage: 'Please enter category name.' }
  ]
 
  /**

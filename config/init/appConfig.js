@@ -31,7 +31,7 @@ const googleAuth = {
     callbackURL: ''
 }
 
-// All other configuration
+// Exported configuration object
 const appConfig = {
     DBConnectionString: devDBConnectionString,
     EmailConfig: emailConfig,

@@ -16,23 +16,21 @@ module.exports = function(passport) {
         jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),
         secretOrKey: appConfig.PassportSecret
     };
-    
-    passport.use(new JwtStrategy(options, function(jwtPayload, done) {
-        console.log('jwt pay load');
-        console.log(JSON.stringify(jwtPayload));
-        
+
+    var jwtStrategy = new JwtStrategy(options, function(jwtPayload, next) {
         userModel.findOne({_id: jwtPayload.user_id}, function(err, user) {
             if (err) {
                 throw err;
-                return done(err, user);
+                return next(err, user);
             }
             if (user) {
-                console.log(user);
-                done(null, user);
+                next(null, user);
             }
             else {
-                done(null, false);
+                next(null, false);
             }
         });
-    }));
+    });
+    
+    passport.use(jwtStrategy);
 };
