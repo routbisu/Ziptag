@@ -1,20 +1,25 @@
 // =================================================================================
 // Base Setup
 // =================================================================================
-'use strict';
+"use strict";
 
+// Node Modules
 const express       = require('express');
-const app           = express();
 const bodyParser    = require('body-parser');
 const morgan        = require('morgan');
 const passport      = require('passport');
 const requireAll    = require('require-all');
 
-// Custom middleware
-// const allowAdminOnly = require('./middlewares/allowAdminOnly');
+// Project Modules
+const enableCORS        = require('./middlewares/enableCORS');
+const router            = require('./routes/routes');
+const passportModule    = require('./middlewares/passportAuth.js')(passport);
 
 // Get port number
 const port = process.env.PORT || 3000;
+
+// Instantiate express
+const app = express();
 
 // Configure body parser
 app.use(bodyParser.urlencoded({extended: true}));
@@ -22,22 +27,10 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 // CORS Enable all origins
-app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Authorization, content-type, x-http-method-override');
-    next();
-});
+app.use(enableCORS);
 
 // Initialize passport for use and configure JWT strategy
 app.use(passport.initialize());
-require('./middlewares/passportAuth.js')(passport);
-
-// Allow admin only for some routes
-//app.use(allowAdminOnly);
-
-// Get other dependencies
-const router = require('./routes/routes');
 
 // Instantiate all controllers
 requireAll({
