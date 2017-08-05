@@ -11,7 +11,7 @@ const passport      = require('passport');
 const requireAll    = require('require-all');
 
 // Custom middleware
-const allowAdminOnly = require('./middlewares/allowAdminOnly');
+// const allowAdminOnly = require('./middlewares/allowAdminOnly');
 
 // Get port number
 const port = process.env.PORT || 3000;

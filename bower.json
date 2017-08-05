@@ -1,0 +1,27 @@
+{
+  "name": "Ziptag UI",
+  "description": "Ziptag front-end",
+  "main": "index.html",
+  "authors": [
+    "Biswaranjan Rout"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/routbisu/Ziptag",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "angular": "^1.6.5",
+    "react": "^15.6.1",
+    "font-awesome": "^4.7.0",
+    "moment": "^2.18.1"
+  }
+}

@@ -31,6 +31,6 @@ module.exports = function(passport) {
             }
         });
     });
-    
+
     passport.use(jwtStrategy);
 };
