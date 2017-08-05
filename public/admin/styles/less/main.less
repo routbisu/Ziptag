@@ -1,0 +1,30 @@
+@import "config";
+@import "mixins";
+
+.btn {
+  padding: 10px;
+  border: 0;
+}
+
+.primary-btn:extend(.btn) {
+  background-color: @primary-color;
+  .thin-round-border(red);
+}
+
+body {
+  background: @bg-color;
+}
+
+ul#menu {
+  list-style: none;
+  li {
+    padding: 10 px 0;
+    a {
+      color: @secondary-color;
+      text-decoration: none;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
