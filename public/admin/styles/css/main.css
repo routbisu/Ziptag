@@ -1,33 +1,39 @@
-@import url(https://fonts.googleapis.com/css?family=Sofia);
+@import url(https://fonts.googleapis.com/css?family=Rubik);
 /* All variables */
 /* Contains all mixins */
-.btn,
-.primary-btn {
-  padding: 10px;
-  border: 0;
+.border-padding-background-init {
+  border: 0px;
+  padding: 0px;
+  background: none;
 }
-.primary-btn {
-  background-color: #3b5998;
+body {
+  font-family: 'Rubik', 'Segoe UI', verdana, sans-serif;
+  color: #666;
+}
+.sidenav {
+  margin: 0;
+}
+.container-fluid {
+  padding: 0;
+}
+.red-border {
+  border: 1px solid red;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  webkit-border-radius: 0px;
+}
+.btn-style-init {
+  border: 0px;
+  padding: 0px;
+  background: none;
+}
+.ziptag-btn {
+  border: 0px;
+  padding: 0px;
+  background: none;
+  padding: 6px;
   border: 1px solid red;
   border-radius: 5px;
   -moz-border-radius: 5px;
   webkit-border-radius: 5px;
-}
-body {
-  background: red;
-  font-family: 'Sofia';
-  font-size: 22px;
-}
-ul#menu {
-  list-style: none;
-}
-ul#menu li {
-  padding: 10 px 0;
-}
-ul#menu li a {
-  color: #f57823;
-  text-decoration: none;
-}
-ul#menu li a:hover {
-  color: #000;
 }

@@ -1,32 +1,30 @@
-@import url(https://fonts.googleapis.com/css?family=Sofia);
+// Import all fonts & other less files
+@import url(https://fonts.googleapis.com/css?family=Rubik);
 @import "config";
 @import "mixins";
 
-.btn {
-  padding: 10px;
-  border: 0;
-}
-
-.primary-btn:extend(.btn) {
-  background-color: @primary-color;
-  .thin-round-border(red);
-}
-
 body {
-  background: @bg-color;
-  font-family: 'Sofia';font-size: 22px;
+  font-family: @website-font-family;
+  color: #666;
 }
 
-ul#menu {
-  list-style: none;
-  li {
-    padding: 10 px 0;
-    a {
-      color: @secondary-color;
-      text-decoration: none;
-      &:hover {
-        color: #000;
-      }
-    }
-  }
+.sidenav {
+  margin: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.red-border {
+  .thin-round-border(0px, red);
+}
+
+.btn-style-init {
+  .border-padding-background-init;
+}
+
+.ziptag-btn {
+  .border-padding-background-init;
+  .thin-round-border-with-padding(5px, red, 6px);
 }
