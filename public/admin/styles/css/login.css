@@ -2,6 +2,11 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 /* All variables */
 /* Contains all mixins */
+.border-padding-background-init {
+  border: 0px;
+  padding: 0px;
+  background: none;
+}
 html,
 body,
 .container,
