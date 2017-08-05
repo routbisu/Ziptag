@@ -7,8 +7,12 @@
   background: none;
 }
 body {
+
   font-family: 'Rubik', 'Segoe UI', verdana, sans-serif;
   color: #666;
+  background: grey;
+  font-family: 'Sofia';
+  font-size: 22px;
 }
 .sidenav {
   margin: 0;
