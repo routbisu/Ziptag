@@ -1,30 +1,79 @@
 // Import all fonts & other less files
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Rubik);
 @import "config";
 @import "mixins";
 
 body {
   font-family: @website-font-family;
-  color: #666;
-}
-
-.sidenav {
-  margin: 0;
-  background-color: @nav-bg-color;
-  position: absolute;
-  min-height: 100%;
-  height: 100%;
-  width: 200px;
-  top: 0;
-  left: 0;
+  color: @body-default-text-color;
 }
 
 .container-fluid {
   padding: 0;
 }
 
+.sidenav {
+  margin: 0;
+  padding-bottom: 30px;
+  background-color: @nav-bg-color;
+  position: absolute;
+  overflow: auto;
+  min-height: 100%;
+  height: 100%;
+  width: 235px;
+  top: 0;
+  left: 0;
+  color: @text-dark-bg-color;
+
+  .sidenav-menu {
+    margin-top: 20px;
+  }
+
+  .sidenav-footer {
+    position: fixed;
+    width: 235px;
+    padding: 10px;
+    background-color: @sidenav-footer-bg-color;
+    left: 0;
+    bottom: 0;
+  }
+
+   .sidenav-footer-icons {
+     color: @sidenav-footer-icon-color;
+     margin: 0px 17px;
+     cursor: pointer;
+
+     &:hover {
+      color:@text-dark-bg-color;
+      transition: 1s;
+     }
+   }
+}
+
 .main-content {
-  margin-left: 200px;
+  margin-left: 235px;
+}
+
+// Media query for side nav bar
+@media (max-width: 768px) {
+  .sidenav {
+    visibility: hidden;
+    width: 0px;
+    z-index: 100;
+    opacity: 0.91;
+    transition: 0.3s;
+  }
+
+  .main-content {
+    margin-left: 0px;
+  }
+}
+
+.open-side-nav {
+  visibility: visible;
+  width: 235px;
+  transition: 0.3s;
 }
 
 .red-border {
@@ -39,3 +88,80 @@ body {
   .border-padding-background-init;
   .thin-round-border-with-padding(5px, red, 6px);
 }
+
+/* UL */
+.list-group-item {
+  .border-padding-background-init;
+  padding: 10px;
+  display: block;
+
+  &:hover:extend(.list-group-item) {
+    cursor: pointer;
+    border-right: 6px solid @sidenav-active-green;
+    border-top: 1px solid #4C5964;
+    border-bottom: 1px solid #4C5964;
+    padding: 9px 10px;
+    transition: border-right 0.3s;
+  }
+
+  a {
+    color: @text-dark-bg-color;
+    display: block;
+    margin-left: 10px;
+    text-decoration: none;
+
+    span {
+      padding-left: 8px;
+    }
+  }
+}
+
+.nav-active:extend(.list-group-item) {
+  border-right: 6px solid @sidenav-active-green;
+  .round-border-imp(0px);
+}
+
+/* Logo & Sidenav Footer */
+
+.logo-icon {
+  margin: 10px;
+  width: 50px;
+  margin-right: 5px;
+}
+
+.logo-text {
+  color: @text-dark-bg-color;
+  font-size: 150%;
+  vertical-align: middle;
+}
+
+
+
+ /* Main page content */
+ .main-content {
+   header {
+     background-color: @light-grey-bg;
+     padding: 10px 20px;
+
+     .fa-icon {
+       padding-top: 3px;
+       cursor: pointer;
+     }
+   }
+ }
+
+ .avatar-div {
+   .avatar-name {
+     font-size: 90%;
+     font-weight: bold;
+     padding: 0px 7px;
+   }
+
+   .fa-icon {
+     font-size: 10px;
+   }
+ }
+
+ .avatar-icon {
+   width: 35px;
+ }
