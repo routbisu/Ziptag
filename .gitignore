@@ -1,5 +1,5 @@
 # Node modules (NPM packages)
-node_modules
+node_modules/
 
 # Mac OS Files
 **/.DS_Store
@@ -8,7 +8,10 @@ node_modules
 .vscode
 
 # Bower modules
-public/libs
+public/libs/
 
 # Log files
-logs
+logs/
+
+# CSS Files
+public/admin/styles/css/
