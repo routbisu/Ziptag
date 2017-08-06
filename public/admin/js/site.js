@@ -1,12 +1,28 @@
 "use strict";
 
-(function() {
-  // Handle side nav bar for small screens
-  $(document).ready(function() {
-    $("#sidebar-hamburger").click(function(event) {
-      $("#side-nav-bar").addClass('open-side-nav');
-      event.stopPropagation();
-    });
+// Hide loader overlay div
+var hideLoader = function() {
+  $('.loader-overlay').hide();
+}
+
+var showLoader = function() {
+  $('.loader-overlay').show();
+}
+
+var loaderTest = function() {
+  console.log("Yes");
+  showLoader();
+  setTimeout(function() {
+    hideLoader();
+  }, 6000);
+}
+
+// Handle side nav bar for small screens
+$(document).ready(function() {
+
+  $("#sidebar-hamburger").click(function(event) {
+    $("#side-nav-bar").addClass('open-side-nav');
+    event.stopPropagation();
   });
 
   $(window).click(function() {
@@ -17,4 +33,8 @@
       event.stopPropagation();
   });
 
-})();
+  hideLoader();
+
+  $('#loaderTest').click(loaderTest);
+
+});

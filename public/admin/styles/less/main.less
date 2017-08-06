@@ -9,8 +9,28 @@ body {
   color: @body-default-text-color;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
 .container-fluid {
   padding: 0;
+}
+
+.fa-icon {
+  margin-right: 5px;
+}
+
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9800;
+  background: url('../../img/ajax-loader.gif') center no-repeat #fff;
+  opacity: 0.9;
 }
 
 .sidenav {
@@ -25,6 +45,7 @@ body {
   top: 0;
   left: 0;
   color: @text-dark-bg-color;
+  box-shadow: 1px 0px 2px #AAA;
 
   .sidenav-menu {
     margin-top: 20px;
@@ -142,6 +163,7 @@ body {
    header {
      background-color: @light-grey-bg;
      padding: 10px 20px;
+     border-bottom: 1px solid #D4D9DF;
 
      .fa-icon {
        padding-top: 3px;
@@ -157,11 +179,51 @@ body {
      padding: 0px 7px;
    }
 
+   .avatar-section {
+     cursor: pointer;
+     display: inline-block;
+   }
+
+   .avatar-dropdown-container {
+     display: inline-block;
+     padding-bottom: 2px;
+   }
+
    .fa-icon {
      font-size: 10px;
+   }
+
+   .fa-icon-medium {
+     font-size: 15px;
+     margin-right: 10px;
+     color: @sidenav-footer-bg-color;
    }
  }
 
  .avatar-icon {
    width: 35px;
+ }
+
+
+ /* Main page content */
+ .page-content {
+   padding: 10px 15px;
+
+   h3 {
+     margin-bottom: 20px;
+   }
+ }
+
+ .stat-card {
+   background-color: @very-light-grey-bg;
+   padding-left: 20px;
+   margin: 10px;
+   .heading, .value {
+    display: block;
+   }
+
+   .value {
+    font-size: 40px;
+    font-weight: bold;
+   }
  }
