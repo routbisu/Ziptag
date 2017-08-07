@@ -20,6 +20,7 @@ var loaderTest = function() {
 // Handle side nav bar for small screens
 $(document).ready(function() {
 
+  // Hamburger menu
   $("#sidebar-hamburger").click(function(event) {
     $("#side-nav-bar").addClass('open-side-nav');
     event.stopPropagation();
@@ -31,6 +32,19 @@ $(document).ready(function() {
 
   $('#side-nav-bar').click(function(event){
       event.stopPropagation();
+  });
+
+  // Submenu - Side nav
+  $('#master-data-sub-menu').hide();
+
+  $('#master-data-menu').hover(function() {
+    $('#master-data-menu .right-chevron').addClass('right-chevron-hovered');
+  }, function() {
+    $('#master-data-menu .right-chevron').removeClass('right-chevron-hovered');
+  });
+
+  $('#master-data-menu').click(function () {
+    $('#master-data-sub-menu').slideToggle();
   });
 
   hideLoader();

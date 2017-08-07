@@ -14,6 +14,11 @@ body {
   font-family: 'Open Sans', 'Segoe UI', verdana, sans-serif;
   color: #6B7C8F;
 }
+/* Bootstrap hack to remove padding from all column classes */
+[class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 h1,
 h2,
 h3,
@@ -43,7 +48,7 @@ h6 {
   margin: 0;
   padding-bottom: 30px;
   background-color: #2A3F54;
-  position: absolute;
+  position: fixed;
   overflow: auto;
   min-height: 100%;
   height: 100%;
@@ -72,6 +77,14 @@ h6 {
 .sidenav .sidenav-footer-icons:hover {
   color: #EAEEEF;
   transition: 1s;
+}
+.right-chevron {
+  position: absolute;
+  right: 15px;
+}
+.right-chevron-hovered {
+  position: absolute;
+  right: 9px;
 }
 .main-content {
   margin-left: 235px;
@@ -122,7 +135,6 @@ h6 {
 }
 /* UL */
 .list-group-item,
-.list-group-item:hover,
 .nav-active {
   border: 0px;
   padding: 0px;
@@ -139,7 +151,6 @@ h6 {
   border-top: 1px solid #4C5964;
   border-bottom: 1px solid #4C5964;
   padding: 9px 10px;
-  transition: border-right 0.3s;
 }
 .list-group-item a {
   color: #EAEEEF;
@@ -150,8 +161,23 @@ h6 {
 .list-group-item a span {
   padding-left: 8px;
 }
+ul.list-group-small li {
+  cursor: pointer;
+  font-size: 12px;
+  margin: 5px 0px 5px 15px;
+  list-style: none;
+  padding: 5px;
+}
+ul.list-group-small li:hover {
+  cursor: pointer;
+  border-right: 6px solid #4AAD91;
+  transition: border-right 0.3s;
+}
 .nav-active {
   border-right: 6px solid #4AAD91;
+  border-top: 1px solid #4C5964;
+  border-bottom: 1px solid #4C5964;
+  padding: 9px 10px;
   border-radius: 0px !important;
   -moz-border-radius: 0px !important;
   webkit-border-radius: 0px !important;
@@ -176,11 +202,13 @@ h6 {
 .main-content header .fa-icon {
   padding-top: 3px;
   cursor: pointer;
+  margin-left: 14px;
 }
 .avatar-div .avatar-name {
   font-size: 90%;
   font-weight: bold;
-  padding: 0px 7px;
+  padding: 0px 5px;
+  margin-right: -15px;
 }
 .avatar-div .avatar-section {
   cursor: pointer;
@@ -192,6 +220,7 @@ h6 {
 }
 .avatar-div .fa-icon {
   font-size: 10px;
+  margin-right: 10px;
 }
 .avatar-div .fa-icon-medium {
   font-size: 15px;
@@ -203,15 +232,26 @@ h6 {
 }
 /* Main page content */
 .page-content {
-  padding: 10px 15px;
+  padding: 10px;
 }
-.page-content h3 {
-  margin-bottom: 20px;
+.page-content .table-responsive {
+  padding: 14px;
+}
+h3 {
+  font-size: 20px;
+  margin: 10px;
+}
+.table-top-button-div {
+  text-align: right;
+  margin: 10px;
 }
 .stat-card {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  webkit-border-radius: 8px;
   background-color: #F6F6F6;
-  padding-left: 20px;
-  margin: 10px;
 }
 .stat-card .heading,
 .stat-card .value {
@@ -219,5 +259,13 @@ h6 {
 }
 .stat-card .value {
   font-size: 40px;
+  margin: -10px 0px;
   font-weight: bold;
+}
+/* Forms & Tables */
+.add-data-form {
+  margin: 0px;
+}
+.fa-right-margin {
+  margin-right: 7px;
 }
