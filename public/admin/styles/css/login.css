@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+/* All variables */
+/* Contains all mixins */
+.border-padding-background-init {
+  border: 0px;
+  padding: 0px;
+  background: none;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  webkit-border-radius: 0px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #f9f9f9;
+  font-family: 'Segoe UI', 'sans-serif';
+  font-size: 150%;
+}
+.container {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.center-container {
+  width: 325px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 450px;
+}
+.login-container {
+  padding: 0px;
+}
+.login-panel {
+  font-size: 90%;
+}
+.logo-div {
+  margin-bottom: 25px;
+}
+.login-header-div {
+  margin-bottom: 15px;
+  font-family: 'Raleway', 'Segoe UI', 'sans-serif';
+  font-size: 150%;
+  font-weight: 500;
+}
+.logo-format {
+  width: 150px;
+  height: auto;
+}
+.forgot-password-label,
+.remember-me-label {
+  font-size: 90%;
+}
+.link-text-cursor-hand {
+  cursor: pointer;
+}
+.btn {
+  padding: 10px;
+  border: 0;
+}
+.login-btn {
+  width: 100%;
+  margin-bottom: -15px;
+  margin-top: 1px;
+}

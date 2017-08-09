@@ -13,5 +13,5 @@ public/libs/
 # Log files
 logs/
 
-# CSS Files
-public/admin/styles/css/
+# LESS Files
+public/admin/styles/less/
