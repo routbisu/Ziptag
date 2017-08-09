@@ -4,6 +4,8 @@
   "description": "Source code for Ziptag REST API",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Biswaranjan Rout",
@@ -12,6 +14,7 @@
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "bower": "^1.8.0",
+    "ejs": "^2.5.7",
     "email-validator": "^1.1.1",
     "express": "^4.15.3",
     "jsonwebtoken": "^7.4.1",
