@@ -1,0 +1,42 @@
+/* Contains all mixins */
+
+// Initialize border
+.border-padding-background-init {
+  border: 0px;
+  padding: 0px;
+  background: none;
+  .round-border(0px);
+}
+
+// Apply a round border for an element
+// @param {@border-radius}
+.round-border(@border-radius) {
+  border-radius: @border-radius;
+  -moz-border-radius: @border-radius;
+  webkit-border-radius: @border-radius;
+}
+
+// Apply a round border for an element - important
+// @param {@border-radius}
+.round-border-imp(@border-radius) {
+  border-radius: @border-radius !important;
+  -moz-border-radius: @border-radius !important;
+  webkit-border-radius: @border-radius !important;
+}
+
+// Apply a thin round border for an element
+// @param {@border-radius}
+// @param {@border-color}
+.thin-round-border(@border-radius, @border-color) {
+  border: 1px solid @border-color;
+  .round-border(@border-radius);
+}
+
+// Apply a thin round border for an element
+// @param {@border-radius}
+// @param {@border-color}
+// @param {@padding} - Padding width
+.thin-round-border-with-padding(@border-radius, @border-color, @padding) {
+  padding: @padding;
+  .thin-round-border(@border-radius, @border-color);
+}

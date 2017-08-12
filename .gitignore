@@ -1,8 +1,13 @@
 # Node modules (NPM packages)
-node_modules/
+**/node_modules/
 
 # Mac OS Files
 **/.DS_Store
+
+# compiled output
+**/dist
+**/tmp
+**/out-tsc
 
 # Visual studio code Files
 .vscode
@@ -13,5 +18,5 @@ public/libs/
 # Log files
 logs/
 
-# LESS Files
-# public/admin/styles/less/
+# CSS Files
+public/admin/src/assets/css/
