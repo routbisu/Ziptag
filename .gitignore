@@ -12,7 +12,9 @@
 # Visual studio code Files
 .vscode
 
-# Bower modules
+# Bower Components
+bower_components/
+**/bower_components/
 public/libs/
 public/admin/src/assets/libs/
 
