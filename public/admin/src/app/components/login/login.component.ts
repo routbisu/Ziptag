@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  bar: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
+    console.log('Constructor ran..');
   }
 
+  ngOnInit() {
+    this.bar = 'Foo';
+  }
+
+  update(txtValue) {
+    this.bar = txtValue;
+  }
 }

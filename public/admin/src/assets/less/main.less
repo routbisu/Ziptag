@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   z-index: 9800;
-  background: url('../../img/ajax-loader.gif') center no-repeat #fff;
+  background: url('../img/ajax-loader.gif') center no-repeat #fff;
   opacity: 0.9;
 }
 
@@ -126,30 +126,29 @@ h1, h2, h3, h4, h5, h6 {
   .thin-round-border-with-padding(5px, red, 6px);
 }
 
-/* UL */
+/* Side nav UL */
 .list-group-item {
   .border-padding-background-init;
-  padding: 10px;
+  
   display: block;
+  color: @text-dark-bg-color;
+  display: block;
+  padding: 10px;
+  padding-left: 20px;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
     border-right: 6px solid @sidenav-active-green;
     border-top: 1px solid #4C5964;
     border-bottom: 1px solid #4C5964;
-    padding: 9px 10px;
+    padding: 9px;
+    padding-left: 20px;  
     //transition: border-right 0.3s;
   }
 
-  a {
-    color: @text-dark-bg-color;
-    display: block;
-    margin-left: 10px;
-    text-decoration: none;
-
-    span {
-      padding-left: 8px;
-    }
+  span {
+    padding-left: 8px;
   }
 }
 
@@ -173,7 +172,6 @@ ul.list-group-small {
   border-right: 6px solid @sidenav-active-green;
   border-top: 1px solid #4C5964;
   border-bottom: 1px solid #4C5964;
-  padding: 9px 10px;
   .round-border-imp(0px);
 }
 
