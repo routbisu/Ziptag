@@ -1,3 +1,49 @@
-<p>
-  Login works!!
-</p>
+<div class="login-container">
+  <div class="center-container">
+    <!-- Ziptag Logo -->
+    <div class="text-center logo-div">
+      <img class="logo-format" src="assets/img/logo_lg.png" alt="Ziptag_Logo_Large">
+    </div>
+
+    <!-- Login Panel -->
+    <div class="panel panel-default login-panel">
+      <div class="alert alert-warning" *ngIf=isAuthFailed>
+        Authentication failed. Please try again.
+      </div>
+      <div class="panel-body">
+        <!-- Login Form -->
+        <form>
+          <!-- Email Field -->
+          <div class="form-group row">
+            <div class="col-sm-12 text-left">
+              <label for="inputEmail" class="col-form-label">Email Address</label>
+            </div>
+            <div class="col-sm-12">
+              <input type="email" class="form-control" id="inputEmail">
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group row">
+            <div class="col-xs-6 text-left">
+              <label for="inputPassword" class="col-form-label">Password</label>
+            </div>
+            <div class="col-xs-6 text-right">
+              <label class="col-form-label text-primary forgot-password-label link-text-cursor-hand">Forgot Password?</label>
+            </div>
+            <div class="col-sm-12">
+              <input type="password" class="form-control" id="inputPassword">
+            </div>
+          </div>
+
+          <!-- Sign In Button -->
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary login-btn" [routerLink]="['']">Sign in</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
