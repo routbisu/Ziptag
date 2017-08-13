@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 1px 0px 2px #AAA;
 
   .sidenav-menu {
-    margin-top: 20px;
+    //margin-top: 10px;
   }
 
   .sidenav-footer {
@@ -130,6 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 .list-group-item {
   .border-padding-background-init;
   
+  outline: none !important;
   display: block;
   color: @text-dark-bg-color;
   display: block;
@@ -154,13 +155,14 @@ h1, h2, h3, h4, h5, h6 {
 
 ul.list-group-small {
   li {
+    outline: none !important;  
     cursor: pointer;
     font-size: 12px;
     margin: 5px 0px 5px 15px;
     list-style: none;
     padding: 5px;
 
-    &:hover {
+    &:hover {  
       cursor: pointer;
       border-right: 6px solid @sidenav-active-green;
       transition: border-right 0.3s;
@@ -172,20 +174,32 @@ ul.list-group-small {
   border-right: 6px solid @sidenav-active-green;
   border-top: 1px solid #4C5964;
   border-bottom: 1px solid #4C5964;
+  padding: 9px;
+  padding-left: 20px;  
+  .round-border-imp(0px);
+}
+
+.nav-active-small:extend(.list-group-item) {
+  border-right: 6px solid @sidenav-active-green;
+  padding: 9px;
+  padding-left: 20px;  
   .round-border-imp(0px);
 }
 
 /* Logo & Sidenav Footer */
+.logo-group {
+  margin: 15px;
+}
 
 .logo-icon {
-  margin: 10px;
   width: 50px;
   margin-right: 5px;
 }
 
 .logo-text {
   color: @text-dark-bg-color;
-  font-size: 150%;
+  font-size: 100%;
+  text-transform: uppercase;
   vertical-align: middle;
 }
 

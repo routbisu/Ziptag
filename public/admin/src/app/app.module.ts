@@ -14,7 +14,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
  * All routes for the app
  */
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: HomeComponent },
   { path: 'login', component: LoginComponent},
   { path: 'categories', component: CategoriesComponent }
 ];

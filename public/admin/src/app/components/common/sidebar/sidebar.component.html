@@ -1,22 +1,26 @@
 <nav class="sidenav" id="side-nav-bar">
   <div class="logo-group">
-    <a [routerLink]="''" title="Admin Dashboard Home">
+    <a [routerLink]="'/dashboard'" title="Admin Dashboard Home">
       <img src="assets/img/logo_icon_white.png" class="logo-icon" alt="Ziptag Logo">
     </a>
-    <span class="logo-text">Good Evening!</span>
+    <span class="logo-text">Admin Portal</span>
   </div>
   <div class="sidenav-menu">
     <ul class="list-group">
+      <li class="list-group-item" [routerLink]="'/dashboard'" [routerLinkActive]="['nav-active']">
+        <i class="fa fa-tachometer  fa-lg fa-icon"></i>
+        <span>Dashboard</span>
+      </li>
       <li class="list-group-item" id="master-data-menu">
         <i class="fa fa-database fa-lg fa-icon"></i>
         <span>Master Data</span>
         <i class="fa fa-chevron-down right-chevron"></i>
       </li>
       <ul class="list-group-small" id="master-data-sub-menu">
-        <li [routerLink]="['/categories']">Manage Categories</li>
+        <li [routerLink]="['/categories']" [routerLinkActive]="['nav-active-small']">Manage Categories</li>
         <li>Manage Products</li>
       </ul>
-      <li class="list-group-item">
+      <li class="list-group-item" [routerLink]="['/logs']" [routerLinkActive]="['nav-active']">
         <i class="fa fa-table fa-lg fa-icon"></i>
         <span>Logs</span>
       </li>
@@ -24,7 +28,7 @@
         <i class="fa fa-gift fa-lg fa-icon"></i>
         <span>Vendors</span>
       </li>
-      <li class="list-group-item nav-active">
+      <li class="list-group-item">
         <i class="fa fa-users fa-lg fa-icon"></i>
         <span>Users</span>
       </li>
