@@ -4,7 +4,7 @@
   "description": "Source code for Ziptag REST API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm install && gulp uat && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Biswaranjan Rout",
@@ -26,7 +26,14 @@
   },
   "devDependencies": {
     "@angular/cli": "^1.3.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.8",
     "less": "^2.7.2",
-    "less-watch-compiler": "^1.6.7"
+    "less-watch-compiler": "^1.6.7",
+    "run-sequence": "^2.1.0"
   }
 }
