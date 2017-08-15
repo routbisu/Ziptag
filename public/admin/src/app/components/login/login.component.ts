@@ -12,5 +12,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadParticlesJS();
+  }
+
+  /**
+   * Load particles JS initializer
+   */
+  loadParticlesJS() {    
+    var script = document.createElement('script');
+    document.body.appendChild(script)
+    script.src = 'assets/js/particlesjs/particles.init.js';
   }
 }

@@ -3,6 +3,7 @@
 
 # Mac OS Files
 **/.DS_Store
+.DS_Store
 
 # compiled output
 **/dist
