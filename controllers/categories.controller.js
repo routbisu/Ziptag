@@ -7,7 +7,8 @@ const adminOnly = require('../middlewares/allowAdminOnly');
  * Get all categories
  */
 router.get('/categories', passport.authenticate('jwt', { session: false }), function(req, res) {
-    categoriesService.GetAll().then(function(categories) {
+    console.log(req.fetchOptions);
+    categoriesService.GetAll(req.fetchOptions).then(function(categories) {
         res.json(categories);
     }, function(error) {
         res.status(400).json({ Message: error })
@@ -19,6 +20,7 @@ router.get('/categories', passport.authenticate('jwt', { session: false }), func
  * Allow only for admins
  */
 router.post('/categories', passport.authenticate('jwt', { session: false }), adminOnly, function(req, res) {
+    console.log(req.body);    
     categoriesService.CreateNew({
         category_name: req.body.CategoryName,
         category_description: req.body.CategoryDescription ? req.body.CategoryDescription : '',

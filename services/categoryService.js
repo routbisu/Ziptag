@@ -23,6 +23,7 @@ let categoriesService = {
                 newCategory.save(function(err) {
                     if(err) {
                         reject(GetErrorMessage(800));
+                        console.log(err);
                     } else {
                         resolve(true);
                     }
@@ -32,11 +33,13 @@ let categoriesService = {
     },
 
     // Get list of all products
-    GetAll: function() {
+    GetAll: function(options) {
         return new Promise(function(resolve, reject) {
-            CategoryModel.find(function(err, categories) {
-                if(err) 
+            CategoryModel.find({}, [], options, function(err, categories) {
+                if(err) {
                     reject(GetErrorMessage(800));
+                    console.log(err);
+                }
                 else
                     resolve(categories);
             });

@@ -1,8 +1,8 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const appConfig = require('../config/init/appConfig');
-const GetErrorMessage = require('../config/init/errorMessages');
-const validationHelper = require('../helpers/validationHelper');
+const bcrypt            = require('bcrypt');
+const jwt               = require('jsonwebtoken');
+const appConfig         = require('../config/init/appConfig');
+const GetErrorMessage   = require('../config/init/errorMessages');
+const validationHelper  = require('../helpers/validationHelper');
 
 // Get user mongoose model
 const UserModel = require('../models/user');

@@ -16,6 +16,7 @@ const path          = require('path');
 const enableCORS        = require('./middlewares/enableCORS');
 const router            = require('./routes/routes');
 const passportModule    = require('./middlewares/passportAuth.js')(passport);
+const apiOptions        = require('./middlewares/apiOptions.js');
 
 // Get port number
 const port = process.env.PORT || 5000;
@@ -40,6 +41,8 @@ requireAll({
     filter:  /(.+controller)\.js$/,
     recursive: false
 });
+
+app.use(apiOptions);
 
 // Register the API routes
 // All of the routes must be prefixed with /api

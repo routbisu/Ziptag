@@ -11,6 +11,7 @@
      { ErrorCode: 105, ErrorMessage: 'Please enter a password.' },
      { ErrorCode: 106, ErrorMessage: 'Please enter a valid city.' },
      { ErrorCode: 107, ErrorMessage: 'An user with the same email already exists.' },
+     { ErrorCode: 998, ErrorMessage: 'Invalid params - per_page & page are collectively required.' },
      
      { ErrorCode: 601, ErrorMessage: 'User not found.' },
      { ErrorCode: 602, ErrorMessage: 'Incorrect password.' },
