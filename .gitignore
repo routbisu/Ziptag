@@ -24,3 +24,6 @@ logs/
 
 # CSS Files
 public/admin/src/assets/css/
+
+# Other Files
+npm-debug.log
